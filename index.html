@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">
+        Place your bet and roll the dice to win! 😀
+      </h1>
+      <div class="credits">
+          Credits: <span id="credits">100</span>
+      </div>
+      <div class="betting">
+        <label for="betAmount">Bet Amount:</label>
+        <input type="number" id="betAmount" min="1" max="100" value="10">
+        <label for="betNumber" Guess the Sum> (2-12):</label>
+        <input type="number" id="betNumber" min="2" max="12" value="?">
+      </div>
+      <section class="dice-section">
+      <div id="dice1" class="dice dice1">
+        <div class="face face-6"></div>
+      </div>
+      <div id="dice2" class="dice dice2">
+        <div class="face face-4"></div>
+      </div>
+      <button class="btn" onclick="roll()">Throw Dice</button>
+    </section>
+      <audio id="audio" src="./dice-95077.mp3"></audio>
+    </div>
+    <div class="displayNumber">
+      <p id="luckyNumber" class="luckyNumber">
+        <span id="dice1Result"></span>
+        <span id="dice2Result"></span>
+        <span id="sumResult"></span>
+        <span id="betResult"></span>
+      </p>
+    </div>
+    <script src="dice.js"></script>
+  </body>
+</html>

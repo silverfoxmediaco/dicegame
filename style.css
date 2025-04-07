@@ -1,0 +1,147 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 450px;
+  margin: 50px auto;
+  background-image: url('download.jpeg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.heading {
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.credits {
+  font-size: 20px;
+  margin: 10px 0;
+  color: gold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.betting {
+  margin: 10px 0;
+}
+
+.betting label {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.betting input {
+  padding: 5px;
+  width: 60px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+
+.dice-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.dice {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  position: relative;
+  transform-style: preserve-3d;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.dice1 {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.dice2 {
+  transform: rotateX(20deg) rotateY(30deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(250, 250, 250);
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face-1::before { content: "⚫"; font-size: 20px; }
+.face-2::before { content: "⚫ ⚫"; font-size: 20px; letter-spacing: 20px; }
+.face-3::before { content: "⚫ ⚫ ⚫"; font-size: 20px; letter-spacing: 10px; }
+.face-4::before { content: "⚫ ⚫\A⚫ ⚫"; white-space: pre; font-size: 20px; line-height: 30px; }
+.face-5::before { content: "⚫ ⚫\A⚫\A⚫ ⚫"; white-space: pre; font-size: 20px; line-height: 20px; }
+.face-6::before { content: "⚫ ⚫ ⚫\A⚫ ⚫ ⚫"; white-space: pre; font-size: 20px; line-height: 30px; }
+
+button {
+  margin: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: rgba(244, 244, 244, 0.9);
+  color: black;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.spin1 {
+  animation: spin1 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.spin2 {
+  animation: spin2 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spin1 {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(720deg); }
+}
+
+@keyframes spin2 {
+  0% { transform: rotateX(20deg) rotateY(30deg); }
+  100% { transform: rotateX(380deg) rotateY(750deg); }
+}
+
+.displayNumber {
+  width: 450px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.luckyNumber {
+  font-size: 28px;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.luckyNumber span {
+  display: block;
+  margin: 5px 0;
+}
+
+#betResult.win {
+  color: gold;
+}
+
+#betResult.lose {
+  color: red;
+}
