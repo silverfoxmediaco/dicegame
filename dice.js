@@ -13,7 +13,6 @@ const rollButton = document.querySelector('.btn');
 let credits = 100;
 creditsDisplay.textContent = credits;
 
-// Add touch support
 if (navigator.maxTouchPoints > 0) {
   document.addEventListener('touchstart', (event) => {
     event.stopPropagation();
@@ -28,11 +27,9 @@ rollButton.addEventListener('click', (event) => {
 
 function roll() {
 
-    // Get bet amount and guessed number
   const betAmount = parseInt(betAmountInput.value);
   const betNumber = parseInt(betNumberInput.value);
 
-  // Validate bet
   if (isNaN(betAmount) || betAmount <= 0 || betAmount > credits) {
     betResult.textContent = 'Invalid bet amount!';
     betResult.className = 'lose';
@@ -44,11 +41,9 @@ function roll() {
     return;
   }
 
-  // Deduct bet amount
   credits -= betAmount;
   creditsDisplay.textContent = credits;
 
-  // Disable button during roll
   rollButton.disabled = true;
 
 
@@ -67,7 +62,6 @@ function roll() {
         dice2Result.innerText = `Dice 2: ${randomNumber2}`;
         sumResult.innerText = `Your Luck Number is: ${luckyNumber}`;
 
-        // Check bet outcome
     if (luckyNumber === betNumber) {
         const winnings = betAmount * 2;
         credits += winnings;
@@ -79,7 +73,6 @@ function roll() {
       }
       creditsDisplay.textContent = credits;
   
-      // Check if game over
       if (credits <= 0) {
         rollButton.disabled = true;
         betResult.textContent = 'Game Over! You’re out of credits.';
@@ -87,7 +80,6 @@ function roll() {
         rollButton.disabled = false;
       }
   
-      // Share result
       if (navigator.share) {
         navigator.share({
           title: 'Dice Roll Result',
