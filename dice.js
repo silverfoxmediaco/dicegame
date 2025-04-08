@@ -63,7 +63,7 @@ function roll() {
         sumResult.innerText = `Your Luck Number is: ${luckyNumber}`;
 
     if (luckyNumber === betNumber) {
-        const winnings = betAmount * 1;
+        const winnings = betAmount * 3;
         credits += winnings;
         betResult.textContent = `You win ${winnings} credits!`;
         betResult.className = 'win';
