@@ -60,7 +60,7 @@ function roll() {
         const luckyNumber = randomNumber1 + randomNumber2;
         dice1Result.innerText = `Dice 1: ${randomNumber1}`;
         dice2Result.innerText = `Dice 2: ${randomNumber2}`;
-        sumResult.innerText = `Your Luck Number is: ${luckyNumber}`;
+        sumResult.innerText = `Your Winning Number is: ${luckyNumber}`;
 
     if (luckyNumber === betNumber) {
         const winnings = betAmount * 3;
@@ -68,7 +68,6 @@ function roll() {
         betResult.textContent = `You win ${winnings} credits!`;
         betResult.className = 'win';
       } else {
-        credits -= betAmount;
         betResult.textContent = 'You lose!';
         betResult.className = 'lose';
       }
