@@ -68,6 +68,7 @@ function roll() {
         betResult.textContent = `You win ${winnings} credits!`;
         betResult.className = 'win';
       } else {
+        credits -= betAmount;
         betResult.textContent = 'You lose!';
         betResult.className = 'lose';
       }
