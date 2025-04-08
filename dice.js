@@ -10,7 +10,7 @@ const betAmountInput = document.getElementById('betAmount');
 const betNumberInput = document.getElementById('betNumber');
 const rollButton = document.querySelector('.btn');
 
-let credits = 100;
+let credits = 10000;
 creditsDisplay.textContent = credits;
 
 if (navigator.maxTouchPoints > 0) {
@@ -63,7 +63,7 @@ function roll() {
         sumResult.innerText = `Your Luck Number is: ${luckyNumber}`;
 
     if (luckyNumber === betNumber) {
-        const winnings = betAmount * 2;
+        const winnings = betAmount * 1;
         credits += winnings;
         betResult.textContent = `You win ${winnings} credits!`;
         betResult.className = 'win';
